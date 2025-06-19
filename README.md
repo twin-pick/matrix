@@ -5,7 +5,7 @@ Twin Pick's Deployment
 ## Docker
 
 ```bash
-docker build -t twinpick/tars:latest -f docker/Dockerfile.tars .
+docker build -t twinpick/tars:latest -f docker/tars/Dockerfile .
 docker run -p 8080:8080 --name tars tars:latest
 ```
 
