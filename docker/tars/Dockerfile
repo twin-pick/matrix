@@ -8,7 +8,7 @@ WORKDIR /src
 
 RUN go mod download
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o /tars ./main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -o ./tars .
 
 FROM alpine:3.22.0
 
