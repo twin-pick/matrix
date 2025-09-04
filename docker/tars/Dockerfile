@@ -1,4 +1,4 @@
-FROM golang:1.22.2-alpine AS builder
+FROM golang:1.24.4-alpine AS builder
 
 RUN apk add --no-cache git
 
@@ -8,10 +8,10 @@ WORKDIR /src
 
 RUN go mod download
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o ./tars .
+RUN CGO_ENABLED=0 GOOS=linux go build -o ./tars cmd/main.go
 
 FROM alpine:3.22.0
 
-COPY --from=builder /tars /tars
+COPY --from=builder /src/tars .
 
-CMD ["/tars"]
+CMD ["./tars"]
