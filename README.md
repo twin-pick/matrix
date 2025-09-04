@@ -2,13 +2,18 @@
 
 Twin Pick's Deployment
 
-## Docker
+## Usage
+
+### Tars
 
 ```bash
-docker build -t twinpick/tars:latest -f docker/tars/Dockerfile .
-docker run -p 8080:8080 --name tars tars:latest
+OMDB_API_KEY=<your_omdb_api_key> ./scripts/run_tars.sh <scrapper_port(optionnal)> <exposed_port(optionnal)>
 ```
+
+### Wall-e
+
+### Jarvis
 
 ## License
 
-We're under the [MIT License](LICENSE)
+We're under the [MIT License](LICENSE).
