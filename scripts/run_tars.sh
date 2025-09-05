@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 set -e
 
 if [ -z "$OMDB_API_KEY" ]; then
@@ -11,7 +11,7 @@ SCRAPPER_PORT=${1:-8000}
 EXPOSED_PORT=${2:-8085}
 
 echo "🔧 Building image..."
-docker build -t tars -f ../docker/tars/Dockerfile ..
+docker build -t tars -f ./docker/tars/Dockerfile ..
 
 echo "🚀 Running container..."
 docker run \

@@ -1,0 +1,12 @@
+version: 3
+
+tasks:
+  tars:
+    cmds:
+      - chmod +x ./scripts/run_tars.sh
+      - OMDB_API_KEY={{ .CLI_ARGS }} ./scripts/run_tars.sh
+
+  jarvis:
+    cmds:
+      - chmod +x ./scripts/run_jarvis.sh
+      - ./scripts/run_jarvis.sh {{ .CLI_ARGS }}
